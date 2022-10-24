@@ -1,0 +1,54 @@
+.container {
+  width: 20% !important;
+  height: calc(100vh - 70px);
+  /* background-color: #ebecf0; */
+  background-color: rgba(255, 255, 255, 0.726);
+  padding: 27px;
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.taskHeader {
+  width: 100%;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #ebecf0;
+  border-radius: 8px;
+}
+
+.taskHeader h2 {
+  font-size: 24px;
+  font-style: italic;
+  margin: 0;
+}
+
+.taskBody {
+  margin-top: 5px;
+  width: 100%;
+  padding: 17px 15px !important;
+  padding-top: 0;
+  background-color: #ebecf0;
+  height: max-content;
+  border-radius: 8px;
+}
+
+.taskBody ol {
+  display: flex; 
+  flex-direction: column;
+  justify-content: center;
+}
+
+.taskBody ol li {
+  margin: 8px 0 !important;
+  height: 30px;
+  font-size: 20px;
+  border-radius: 24px;
+  background-color: #fff;
+  padding: 0 15px;
+  color: #000;
+  white-space: nowrap;
+  position: relative;
+}
+

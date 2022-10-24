@@ -1,0 +1,65 @@
+.container {
+  width: 80%;
+  /* background-color: #ebecf0;
+  background-color: rgba(255, 255, 255, 0.326); */
+  background-color: rgba(255, 255, 255, 0.739);
+  border-radius: 8px;
+  padding: 27px;
+  overflow-x: scroll;
+  position: relative;
+}
+
+.container::-webkit-scrollbar {
+  width: 15px !important;
+  height: 15px;
+}
+
+.container::-webkit-scrollbar-thumb {
+  border-radius: 8px;
+  background: rgb(134, 135, 243);
+  background: linear-gradient(
+      29deg,
+      rgba(134, 135, 243, 1) 4%,
+      rgba(134, 135, 243, 1) 19%,
+      rgba(194, 57, 205, 1) 45%,
+      rgba(238, 59, 166, 1) 73%,
+      rgba(250, 115, 162, 1) 95%
+    )
+    fixed;
+  transition: all 0.5s ease-in-out;
+  padding: 5px;
+  margin: 5px;
+  border: 2px solid rgba(255, 255, 255, 0.739);
+}
+
+.container::-webkit-scrollbar-thumb:hover {
+  cursor: pointer !important;
+  background-color: red !important;
+}
+
+.diagramHeader {
+  width: max-content;
+  height: 60px;
+  position: sticky;
+  top: 0px;
+  display: flex;
+  align-items: center;
+  padding: 10px 0;
+  background-color: #ebecf0;
+  border-radius: 8px;
+}
+
+.dayBox {
+  width: 50px;
+  padding: 10px 20px;
+  background-color: #1890ff;
+  border-radius: 8px;
+}
+.dayBox:not(:nth-last-child(1)) {
+  border-right: 1px solid #000;
+}
+
+.diagramBody {
+  width: 100%;
+  padding: 22px 0;
+}
