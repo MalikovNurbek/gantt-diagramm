@@ -57,24 +57,13 @@ export const TaskSlice = createSlice({
   name: "task",
   initialState,
   reducers: {
-    setStartDate(state, action: PayloadAction<string>) {
+    selectTask(state, action: PayloadAction<string>) {
       state.startDate = moment(action.payload);
     },
-    setEndDate(state, action: PayloadAction<string>) {
-      state.endDate = moment(action.payload);
-    },
-    setDuration(state) {
-      let duration = state.startDate.diff(state.endDate, "days");
-
-      for (let i = 1; i <= Math.abs(duration); i++) {
-        state.duration.push(i);
-      }
-
-      console.log(state.duration);
-    },
+    
   },
 });
 
-export const { setStartDate, setEndDate, setDuration } = TaskSlice.actions;
+export const {  } = TaskSlice.actions;
 
 export default TaskSlice.reducer;
