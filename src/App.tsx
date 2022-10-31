@@ -1,12 +1,11 @@
 import React from "react";
-import Diagramm from "./components/Diagramm/Diagramm";
-import DataModal from "./components/Modal/Modal";
 import Sidebar from "./components/Sidebar/Sidebar";
+import Diagramm from "./components/Diagramm/Diagramm";
 import './App.css'
+
 function App() {
   return (
     <div className="appContainer">
-      <DataModal />
       <Sidebar />
       <Diagramm />
     </div>

@@ -1,6 +1,18 @@
-
 .box {
-  /* display: block; */
+  width: min-content;
   position: relative;
-  padding: 8px 0 !important;
+  border-radius: 22px;
+  left: -36px;
+}
+.firstBox {
+  width: min-content;
+  position: relative;
+  border-radius: 22px;
+
+}
+
+.block {
+  position: relative;
+  border-radius: 22px;
+  cursor: pointer;
 }

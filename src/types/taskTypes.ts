@@ -1,8 +1,28 @@
-export interface ITask {
+
+
+export interface IStage {
   id: number;
-  progressPercent: number;
-  startDate: number;
   duration: number;
-  taskTitle: string;
   isSelect: boolean;
+  stageTitle: string;
+  progressPercent: number;
+  budget?: number;
+}
+
+export interface ITaskInfo {
+  taskTitle: string;
+  expenses: number;
+  investments: number;
+  firm: number;
+  profit: number;
+  isActiveFirm: boolean;
+  period: any[];
+}
+
+export interface ITask {
+  taskId: number;
+  taskInfo: ITaskInfo;
+  taskDuration: number,
+  dates: string[];
+  stages: IStage[];
 }

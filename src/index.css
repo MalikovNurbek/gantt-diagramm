@@ -1,5 +1,7 @@
 * {
   box-sizing: border-box;
+  scroll-behavior: smooth !important;
+
 }
 
 body {
@@ -7,13 +9,14 @@ body {
   padding: 35px;
   box-sizing: border-box;
   height: 100vh;
-  background: rgb(134, 135, 243);
-  background: linear-gradient(
-    29deg,
-    rgba(134, 135, 243, 1) 4%,
-    rgba(134, 135, 243, 1) 19%,
-    rgba(194, 57, 205, 1) 45%,
-    rgba(238, 59, 166, 1) 73%,
-    rgba(250, 115, 162, 1) 95%
-  )  fixed;
+  background-color: #fff !important;
 }
+
+
+/* .ant-progress-steps-item-active {
+  width: 30px !important; 
+} */
+
+/* .ant-progress-steps-item {
+  width: 50px !important;
+} */
