@@ -39,7 +39,7 @@ const AddNewTenderModal: FC<ModalProps> = ({ isModalOpen, setIsModalOpen }) => {
 
         const taskDuration = Math.abs(period[0].diff(period[1], "days"));
 
-        for (let i = 0; i <= taskDuration; i++) {
+        for (let i = 0; i <= 29; i++) {
             dates.push(moment(period[0]).add(i, "day").format(format));
         }
 

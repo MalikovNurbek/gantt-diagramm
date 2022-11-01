@@ -36,6 +36,14 @@ const initialState: TaskStateTypes = {
           "26.10.2022",
           "27.10.2022",
           "28.10.2022",
+          "29.10.2022",
+          "30.10.2022",
+          "31.10.2022",
+          "01.11.2022",
+          "02.11.2022",
+          "03.11.2022",
+          "04.11.2022",
+          "05.11.2022",
       ],
       taskInfo: {
           taskTitle: "Название тендера №1",
@@ -159,7 +167,7 @@ export const TaskSlice = createSlice({
         taskId: randomId,
         dates,
         stages: [],
-        taskDuration: taskDuration,
+        taskDuration: taskDuration + 1,
         taskInfo: {
           ...taskInfo,
           profit: taskInfo.investments + taskInfo.firm - taskInfo.expenses

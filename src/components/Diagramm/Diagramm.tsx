@@ -24,7 +24,7 @@ const Diagramm: FC = () => {
     }, [isLineActive]);
     React.useEffect(() => {
         const numArr = [];
-        for (let i = 1; i <= 31; i++) {
+        for (let i = 1; i <= 30; i++) {
             numArr.push(i);
         }
         setDays(numArr);
@@ -33,6 +33,13 @@ const Diagramm: FC = () => {
     return (
         <div className={styles.container}>
             <div className={styles.diagramm}>
+                <div className={styles.diagrammDates}>
+                    {data[currentTaskId].dates.map(date => (
+                        <div className={styles.day}>
+                            <div>{date}</div>
+                        </div>
+                    ))}
+                </div>
                 <div className={styles.diagrammHeader}>
                     {days.map(day => (
                         <Button
