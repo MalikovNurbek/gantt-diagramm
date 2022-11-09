@@ -8,7 +8,6 @@ import "antd/dist/antd.css";
 import { IStage } from "../../types/taskTypes";
 
 interface InfoModalProps {
-  id: number;
   open: boolean;
   stage: IStage;
   setOpen: (state: boolean) => void;
@@ -27,19 +26,18 @@ const confirm = (deleteStage: () => void) => {
 };
 
 const ProgressInfoModal: FC<InfoModalProps> = ({
-  id,
   stage,
   open,
   setOpen,
 }) => {
   const dispatch = useAppDispatch();
-  const { data, currentTaskId } = useAppSelector(state => state.TaskReducer)
-  const { stageTitle, duration, budget } = stage
-  const { taskTitle, period, investments, firm, expenses, isActiveFirm, profit } = data[currentTaskId].taskInfo;
-  const format = 'DD.MM.YYYY'
-  const startDate = moment(period[0]);
-  const endDate = moment(period[1]);
-  const taskDuration = Math.abs(startDate.diff(endDate, 'days'))
+  // const { data, currentTaskId } = useAppSelector(state => state.TaskReducer)
+  const { id, stageTitle, duration, budget } = stage
+  // const { taskTitle, period, investments, firm, expenses, isActiveFirm, profit } = data[currentTaskId].taskInfo;
+  // const format = 'DD.MM.YYYY'
+  // const startDate = moment(period[0]);
+  // const endDate = moment(period[1]);
+  // const taskDuration = Math.abs(startDate.diff(endDate, 'days'))
   const onDelete = () => {
     dispatch(removeStageFromTaskByID(id));
     setOpen(false);
@@ -75,7 +73,7 @@ const ProgressInfoModal: FC<InfoModalProps> = ({
               : "дней"
           }`}
         </h4>
-        <br /> <br />
+        {/* <br /> <br />
         <span>Тендер: {taskTitle}</span> <br />
         <div>
           <span>Дата начала: {startDate.format(format)}</span>
@@ -101,7 +99,7 @@ const ProgressInfoModal: FC<InfoModalProps> = ({
         <span>Маржа: {profit}</span> <br />
         <span>
           Активность компании: {isActiveFirm ? "Активная" : "Неактивная"}
-        </span>
+        </span> */}
       </Modal>
   );
 };

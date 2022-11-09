@@ -1,108 +1,117 @@
+
 .container {
-  min-width: 366px !important;
-  height: calc(100vh - 70px);
-  /* background-color: rgba(255, 255, 255, 0.726); */
-  background-color: #f4f7ff !important;
-
-  border: none !important;
-  padding: 27px !important;
-  overflow: hidden;
-  border-radius: 8px !important;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+    height: 200vh;
+    display: flex;
+    flex-direction: column;
+    position: sticky;
+    left: 0px;
+    top: 0;
+    z-index: 4;
+    background-color: #f4f7ff !important;
+    padding: 5px !important;
+    border-radius: 5px !important;
 }
-/* 
+
+.containerHeader {
+    width: 100%;
+    height: 124px;
+}
+
+.accordion {
+    border: none !important;
+    background-color: #f4f7ff !important;
+}
+
 .activePanel {
-  margin-bottom: 8px;
-  width: 100%;
-  padding: 17px 15px !important;
-  padding-top: 0;
-  font-size: 20px;
-  font-weight: 600;
-  background-color: #2a7ffd;
-  border-radius: 8px !important;
-  cursor: pointer;
-  transition: all .2s ease-in;
-  display: flex;
-  justify-content: space-between;
+    margin-bottom: 8px;
+    width: 100%;
+    padding: 0px 5px !important;
+    padding-top: 0;
+    font-size: 20px;
+    font-weight: 600;
+    background-color: #2a7ffd;
+    border-radius: 5px !important;
+    cursor: pointer;
+    transition: all .2s ease-in;
+    display: flex;
+    justify-content: space-between;
 }
 
 
 .panel {
-  margin-bottom: 8px;
-  width: 100%;
-  padding: 17px 15px !important;
-  padding-top: 0;
-  font-size: 20px;
-  font-weight: 600;
-  background-color: #a6c7fa;
-  border-radius: 8px !important;
-  cursor: pointer;
-  transition: all .2s ease;
-  display: flex;
-  justify-content: space-between;
-}
-
-.panel:hover {
-  background-color: #77abf8;
-} */
-
-.containerFooter {
-  position: relative;
-  margin-top: auto;
-}
-/* 
-.panel {
-  margin-bottom: 8px;
-  width: 100%;
-  padding: 17px 15px !important;
-  padding-top: 0;
-  font-size: 20px;
-  font-weight: 600;
-  background-color: #a6c7fa;
-  border-radius: 8px !important;
+    margin-bottom: 30px;
+    width: 100% !important;
+    padding: 2px 5px !important;
+    font-size: 18px;
+    font-weight: 600;
+    background-color: #a6c7fa;
+    border-radius: 2px !important;
 }
 
 .panel ol {
-  height: 160px;
-  margin-bottom: 0;
-  border-radius: 8px;
-
-  overflow-y: auto;
+    width: 100%;
+    max-height: 160px;
+    margin-bottom: 0;
+    border-radius: 5px;
+    overflow-y: auto;
+    list-style: none;
+    padding-left: 0;
 }
+
 .panel ol::-webkit-scrollbar {
-  width: 10px !important;
+    width: 4px !important;
 }
 
 .panel ol::-webkit-scrollbar-thumb {
-  border-radius: 8px;
-  background-color: #a6c7fa !important;
-  transition: background-color .8s;
+    border-radius: 8px;
+    background-color: #F1F1F4 !important;
+    transition: background-color .8s;
 }
 
 .panel ol::-webkit-scrollbar-thumb:hover {
-  cursor: pointer !important;
+    cursor: pointer !important;
 }
-.panel ol li {
-  margin: 8px 0 !important;
-  height: 30px;
-  font-size: 20px;
-  border-radius: 24px;
-  background-color: #fff;
-  padding: 0 15px;
-  color: #000;
-  white-space: nowrap;
-  position: relative;
-  cursor: pointer;
-}
+
+
 .listItem {
-  background-color: #fff;
-  color: #89b1d5;
+    color: #3C0C6F;
+    width: 100%;
+    margin: 0 !important;
+    font-size: 16px;
+    font-weight: 400;
+    background-color: #fff;
+    padding: 10px 14px;
+    white-space: nowrap;
+    position: relative;
+    cursor: pointer;
+    transition: 150ms ease-out;
 }
+
+.listItem:active {
+    background-color: #F1F1F4;
+}
+
+.listItem:hover {
+    background-color: #F9F9FA;
+}
+
 .selectedListItem {
-  color: #fff !important; 
+    border-right: 3px solid #a6c7fa;
+    color: #3C0C6F;
+    width: 100%;
+    margin: 0 !important;
+    font-size: 16px;
+    font-weight: 400;
+    padding: 10px 14px;
+    background-color: #F1F1F4;
+    white-space: nowrap;
+    position: relative;
+    cursor: pointer;
 }
-.panel ol li::marker {
-  color: #000 !important;
-} */
+
+
+.containerFooter {
+    position: sticky;
+    bottom: 0;
+    margin-top: auto !important;
+}

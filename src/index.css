@@ -1,22 +1,55 @@
 * {
-  box-sizing: border-box;
-  scroll-behavior: smooth !important;
+    box-sizing: border-box;
+    scroll-behavior: smooth !important;
 
+}
+
+::-webkit-scrollbar {
+    width: 6px !important;
+    height: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 8px;
+    background-color: #a6c7fa !important;
+    transition: background-color 0.8s;
+    padding: 5px;
+    margin: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    cursor: pointer !important;
 }
 
 body {
-  margin: 0;
-  padding: 35px;
-  box-sizing: border-box;
-  height: 100vh;
-  background-color: #fff !important;
+    margin: 0;
+    padding: 5px;
+    box-sizing: border-box;
+    /* height: 100vh; */
+    background-color: #fff !important;
 }
 
+/*   ========== Ant Design customing ===========*/
+.ant-collapse > .ant-collapse-item > .ant-collapse-header {
+    padding: 0 4px !important;
+}
 
-/* .ant-progress-steps-item-active {
-  width: 30px !important; 
-} */
+.ant-collapse-header-text {
+    font-size: 16px !important;
+}
 
-/* .ant-progress-steps-item {
-  width: 50px !important;
-} */
+.ant-collapse-content-box {
+    padding: 0 !important;
+}
+
+.ant-collapse-header-text {
+    font-weight: 400 !important;
+}
+
+.ant-progress-steps-item-active {
+    width: 30px !important;
+}
+
+.ant-progress-steps-item {
+    width: 50px !important;
+}

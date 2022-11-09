@@ -1,104 +1,102 @@
 .container {
-  width: 80%;
-  background-color: #f4f7ff;
-  border-radius: 8px;
-  position: relative;
-  padding: 27px;
-  overflow-y: auto;
+    width: max-content;
+    background-color: #f4f7ff;
+    border-radius: 5px;
+    position: relative;
+    padding: 5px;
 }
 
 .diagramm {
-  width: 100%;
-  height: 100%;
-  overflow-x: scroll;
-  border-radius: 8px !important;
+    width: 100%;
+    height: 100%;
+    min-height: 100%;
+    border-radius: 8px !important;
 }
 
 .diagramm::-webkit-scrollbar {
-  width: 15px !important;
-  height: 12px;
+    width: 6px !important;
+    height: 6px;
 }
 
 .diagramm::-webkit-scrollbar-thumb {
-  border-radius: 8px;
-  background-color: #a6c7fa !important;
-  transition: background-color 0.8s;
-  padding: 5px;
-  margin: 5px;
+    border-radius: 8px;
+    background-color: #a6c7fa !important;
+    transition: background-color 0.8s;
+    padding: 5px;
+    margin: 5px;
 }
 
-.diagramm::-webkit-scrollbar-thumb:hover {
-  cursor: pointer !important;
+.diagrammHeader {
+    width: max-content;
+    position: sticky;
+    top: 0;
+    z-index: 3;
+    background-color: #f4f7ff;
 }
-
 
 .diagrammDates {
-  display: flex;
-  position: relative;
+    display: flex;
+    position: relative;
 }
 
 .day {
-  height: 80px;
-  width: 50px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+    height: 80px;
+    width: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
+
 .day div {
-  transform: rotate(-90deg) !important;
+    transform: rotate(-90deg) !important;
 }
 
 
-.diagrammHeader {
-  width: max-content;
-  height: max-content;
-  position: sticky;
-  top: 0px;
-  display: flex;
-  align-items: center;
-  padding: 10px 0;
-  padding-right: 20px;
-  background-color: #a6c7fa;
-  border-radius: 8px;
-  overflow: hidden;
-  z-index: 3;
+.diagrammDays {
+    width: max-content;
+    height: max-content;
+    display: flex;
+    align-items: center;
+    padding-right: 20px;
+    border-radius: 8px;
+    overflow: hidden;
+
 }
 
 .dayBox {
-  width: 50px;
-  padding: auto 20px;
-  background-color: #1890ff;
-  color: #fff;
-}
-.dayBox:not(:nth-last-child(1)) {
-  border-right: 1px solid #000;
+    width: 50px;
+    padding: auto 20px;
+    background-color: #1890ff;
+    color: #fff;
 }
 
-.switch {
+.dayBox:not(:nth-last-child(1)) {
+    border-right: 1px solid #000;
+}
+
+/* .switch {
   width: max-content;
   margin: 20px;
   text-align: right;
   position: sticky;
   left: 20px;
-}
+} */
 
 .diagrammBody {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  align-items: flex-start;
-  position: relative;
-}
-
-
-.gridLayout {
-  width: calc(30 * 50px);
-  height: 100%;
-  position: absolute;
-  top: 0;
-  left: 100;
-  background: linear-gradient(#bbb, transparent 1px),
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    position: relative;
+    margin-top: 10px;
+    width: calc(30 * 50px);
+    height: calc(20 * 30px);
+    top: 0;
+    background: linear-gradient(#bbb, transparent 1px),
     linear-gradient(90deg, #bbb, transparent 1px);
-  background-size: 50px 30px;
-  /* background-position: center center; */
+    background-size: 50px 30px;
 }
+
+.taskBox {
+    display: flex;
+}
+

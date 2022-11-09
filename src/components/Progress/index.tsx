@@ -19,7 +19,6 @@ const TaskProgress: FC<TaskProgressProps> = ({ stage, index }) => {
   return (
     <>
       <ProgressInfoModal
-        id={id}
         open={open}
         setOpen={setOpen}
         stage={stage}
@@ -29,7 +28,7 @@ const TaskProgress: FC<TaskProgressProps> = ({ stage, index }) => {
         className={index === 0 ? styles.firstBox : styles.box}
         onClick={() => dispatch(selectTaskStage(id))}
         style={{
-          top: `${index === 0 ? 0 : index * 60}px`,
+          // top: `${index === 0 ? 0 : index * 60}px`,
           left: `${index * -36}px`,
         }}
       >

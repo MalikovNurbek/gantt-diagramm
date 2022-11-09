@@ -4,10 +4,12 @@ import Diagramm from "./components/Diagramm/Diagramm";
 import './App.css'
 
 function App() {
+  const [isLineActive, setIsLineActive] = React.useState<boolean>(false);
+
   return (
     <div className="appContainer">
-      <Sidebar />
-      <Diagramm />
+      <Sidebar isLineActive={isLineActive} setIsLineActive={setIsLineActive}/>
+      <Diagramm isLineActive={isLineActive}/>
     </div>
   );
 }

@@ -1,16 +1,25 @@
 import React, { FC } from "react";
-import { Button } from "antd";
+import { Button, Collapse, Switch } from "antd";
 import ButtonGroup from "antd/lib/button/button-group";
 import AddNewStageModal from "../AddNewStageModal";
 import AddNewTenderModal from "../AddNewTenderModal";
-import { useAppSelector } from "../../hooks/redux";
+import { useAppDispatch, useAppSelector } from "../../hooks/redux";
+import { shortedText } from "../../helpers";
+import { selectTaskStage } from "../../store/reducer/TaskSlice";
 import styles from "./sidebar.module.css";
-import TaskItem from "../TaskItem";
 
-const Sidebar: FC = () => {
+const {Panel} = Collapse;
+
+interface SidebarProps {
+  setIsLineActive: (state: boolean) => void;
+  isLineActive: boolean;
+}
+
+const Sidebar: FC<SidebarProps> = ({setIsLineActive, isLineActive}) => {
   const [isTaskModalOpen, setIsTaskModalOpen] = React.useState<boolean>(false);
   const [isStageModalOpen, setIsStageModalOpen] = React.useState<boolean>(false);
-  const { data } = useAppSelector((state) => state.TaskReducer);
+  const {data} = useAppSelector((state) => state.TaskReducer);
+  const dispatch = useAppDispatch()
 
   return (
     <>
@@ -23,12 +32,38 @@ const Sidebar: FC = () => {
         setIsModalOpen={setIsTaskModalOpen}
       />
       <div className={styles.container}>
-        <div className={styles.containerBody}>
-          {data.map((task, i) => (
-            <TaskItem task={task} index={i} key={task.taskId}/>
-          ))}
+        <div className={styles.containerHeader}>
+          <Switch
+            onChange={() => setIsLineActive(!isLineActive)}
+            checkedChildren="Линия"
+            checked={isLineActive}
+            unCheckedChildren="Линия"
+          />
         </div>
+        <Collapse
+          defaultActiveKey={data[0].taskId}
+          className={styles.accordion}
+          accordion
+        >
+          {data.map(({taskId, taskInfo: {taskTitle}, stages}) => (
+            <Panel key={taskId} header={taskTitle} className={styles.panel}>
+              <ol>
+                {stages.map(({id, stageTitle, isSelect}) => (
+                  <li
+                    key={id}
+                    className={
+                      isSelect ? styles.selectedListItem : styles.listItem
+                    }
+                    onClick={() => dispatch(selectTaskStage(id))}
+                  >
+                    {shortedText(stageTitle)}
+                  </li>
+                ))}
+              </ol>
+            </Panel>
+          ))}
 
+        </Collapse>
         <ButtonGroup className={styles.containerFooter}>
           <Button
             block
@@ -48,33 +83,6 @@ const Sidebar: FC = () => {
           </Button>
         </ButtonGroup>
       </div>
-      {/* <Collapse
-        defaultActiveKey={data[0].taskId}
-        onChange={onChange}
-        accordion
-        className={styles.container}
-      >
-        {data.map(({ taskId, taskTitle, stages }) => (
-          <Panel key={taskId} header={taskTitle} className={styles.panel}>
-            <ol>
-              {stages.map(({ id, stageTitle, isSelect }) => (
-                <li
-                  key={id}
-                  className={
-                    isSelect ? styles.selectedListItem : styles.listItem
-                  }
-                  onClick={() => dispatch(selectTaskStage(id))}
-                >
-                  <a href={`#${id}`}>{shortedText(stageTitle)}</a>
-                </li>
-              ))}
-            </ol>
-            <Button type="primary" onClick={openAddModal}>
-              <PlusOutlined />
-            </Button>
-          </Panel>
-        ))}
-      </Collapse> */}
     </>
   );
 };
